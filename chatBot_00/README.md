@@ -4,7 +4,7 @@
 __________________________
 Ranges/Stages (Tokens):
 __________________________
-0: 1-100         - Black Stone of Legend 
+0: 1-100       - Black Stone of Legend 
 1: 101-200     - Red Eyes B. Chic
 2: 201-300     - Black Metal Dragon
 3: 301-500     - Red Eyes Wyvern
@@ -12,10 +12,12 @@ __________________________
 5: 801-999     - Red Eyes Darkness Metal
 6: 1000-9000 - Red Eyes Flare Metal 
 7: OVER 9000 - Red Eyes Ultimate
+
 --------------------------------
 Alternate options . . . 
 --------------------------------
-
+(will add alternates here soon for the above listing) 
+(i.e.) diff commands for me *weird thought tbh*
 
 ____________________
 @ Level . . .  you should. . . (don't have to u.u)
