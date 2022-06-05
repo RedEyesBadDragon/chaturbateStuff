@@ -3,11 +3,13 @@ Title: "REBD's chatBot_00 <3"
 Author: RedEyesBadDragon
 Version: 0.0.1
 
+All source code for REBD can be 
+found at: https://www.github/RedEyesBadDragon.com
 */
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-// source framwork of the code (Because this is literally the first time I've touched 
+// Source framework of the code (Because this is literally the first time I've touched 
 // javascript in my fucking life [*isn't it sooooo great I can just curse in comments now
 //
 // fuck 
@@ -19,18 +21,16 @@ Version: 0.0.1
 // so go easy on me. 
 //
 // Developed off of:
-// 	"Tip Menu Single Line Plus" bot
-// 	Author: badbedbubba
-// 	Version 1.0.0 (03/07/2016)
-// 	1.0.1 (09/08/2016) Improved error checking and reporting
-// 	3.0.2 (09/09/2016) Added text character seperators 
+//      "Tip Menu Single Line Plus" bot
+//      Author: badbedbubba
+//      Version 1.0.0 (03/07/2016)
 //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//var  HEART 	= '\u2665';	// ♥
-//    BDIAMOND 	= '\u2666';	// ♦
-//   BSTAR 	= '\u2605';	// ★
+var  HEART    = '\u2665';     // ♥
+    BDIAMOND  = '\u2666';     // ♦
+   BSTAR      = '\u2605';     // ★
 
 var tip_amt = 0;
 var separator_char = "| ";
@@ -38,7 +38,9 @@ var msg;
 var MAXITEMS=20;
 var tipmenuprice = [];
 var tipmenuitem= [];
-var MAXSEP = 9;
+var MAXSEP = 8;
+
+
 
 separators = [
   {label:'Black Stone of Legend',shortcut:':heart2'},
@@ -53,41 +55,45 @@ separators = [
 ]
 
 cb.settings_choices = [
-    {name: 'sepchar', type: 'choice', choice1: 'Vertical Bar', choice2: 'Hearts', choice3:'Glitter',choice4:'Flowers',choice5:'Bow',choice6:'Hearts2',choice7:'Smiley',choice8:'Text Heart', choice9:'Text Diamond', /*choice10:'Text Star',*/ defaultValue: 'Vertical Bar', label: "Separator character"},
-    {name:'item1', type:'str', label:'Item 1 (eg 10--flash tits)',},
-    {name:'item2', type:'str', required: false, label:'Item 2',},
-    {name:'item3', type:'str', required: false, label:'Item 3',},
-    {name:'item4', type:'str', required: false, label:'Item 4',},
-    {name:'item5', type:'str', required: false, label:'Item 5',},
-    {name:'item6', type:'str', required: false, label:'Item 6',},
-    {name:'item7', type:'str', required: false, label:'Item 7',},
-    {name:'item8', type:'str', required: false, label:'Item 8',},
-    {name:'item9', type:'str', required: false, label:'Item 9',},
-    {name:'item10', type:'str', required: false, label:'Item 10',},
-    {name:'item11', type:'str', required: false, label:'Item 11',},
-    {name:'item12', type:'str', required: false, label:'Item 12',},
-    {name:'item13', type:'str', required: false, label:'Item 13',},
-    {name:'item14', type:'str', required: false, label:'Item 14',},
-    {name:'item15', type:'str', required: false, label:'Item 15',},
-    {name:'item16', type:'str', required: false, label:'Item 16',},
-    {name:'item17', type:'str', required: false, label:'Item 17',},
-    {name:'item18', type:'str', required: false, label:'Item 18',},
-    {name:'item19', type:'str', required: false, label:'Item 19',},
-    {name:'item20', type:'str', required: false, label:'Item 20',},
+    {name: 'sepchar', type: 'choice', choice1: 'Black Stone of Legend', choice2:'Red Eyes B. Chic', choice3:'Black Metal Dragon', choice4:'Red Eyes Wyvern', choice5:'Red Eyes Black Dragon <3', choice6:'Red Eyes Darness Metal', choice7:'Red Eyes Flare Metal', choice8:'Red Eyes Ultimate', /*choice10:'Text Star',*/ defaultValue: 'Black Stone of Legend', label: "Separator character"},
+
+    {name:'Black Stone of Legend', type:'str', label:
+    'Request a facial expression or pose (like lewd / ahegao / head down ass up /etc)',},
+
+    {name:'Red Eyes B. Chic', type:'str', required: false, label:
+    'Q&A -> ask away shoot',},
+
+    {name:'Black Metal Dragon', type:'str', required: false, label:
+    'Song request 0.0 choose wisely lmfao',},
+
+    {name:'Red Eyes Wyvern', type:'str', required: false, label:
+    'Smash or pass- I will give my honest answer lmfao I will not rate answer if it is the pic of the viewer on live stream as to protect privacy I WILL answer for anything else tho live.',},
+
+    {name:'Red Eyes Black Dragon <3', type:'str', required: false, label:
+'Request an action (like wink :insert body part here lol / gape / say my name / etc etc)',},
+
+    {name:'Red Eyes Darkness Metal', type:'str', required: false, label:
+'How do you want my cumshot ??? (like spray my face / toward camera / etc etc warning if someone paid this before you I am sorry Uwu This is fulfilled first in first out FIFO)',},
+
+    {name:'Red Eyes Flare Metal', type:'str', required: false, label:
+'Add me on Valorant / Smite / (will add more) Let\'s play a game together lolols <3',},
+
+    {name:'Red Eyes Ultimate', type:'str', required: false, label:
+'Play a literal game of Yu-Gi-Oh on stream LMFAO (Can either be done with physical cards over priv chat/discord video call or on YGO MasterDuels) ... NO FTK DECKS MF 0.0 (I.E. if your first turn combo is taking 10 minutes u are not having fun) otherwise ***WE PLAY 0 BANS HERE MF -> that also means any ban is limit at 1. AGAIN NO FTK. Konami TCG follows otherwise. ***IF you WIN YOU get to pick another menu option :p for FREE <3 UwU',},
+
     {name:'noticecolor', type:'str', label:'Notice color (html code default red #FF0000)', defaultValue: '#FF0000'},
-    {name: 'chat_ad', type:'int', minValue: 1, maxValue: 999, defaultValue: 1,
-        label: 'Delay in minutes between notice being displayed (minimum 1)'}
+    {name: 'chat_ad', type:'int', minValue: 1, maxValue: 999, defaultValue: 1, label: 'Delay in minutes between notice being displayed (minimum 1)'}
 ];
 
 cb.onTip(function (tip)
 {
     tip_amt=parseInt(tip['amount']);
-           
+
     for (var i = 1; i <= MAXITEMS; i++) {
         if (tip_amt == tipmenuprice[i]) {
             cb.sendNotice(tip['from_user'] + ' tipped for ' + tipmenuitem[i],'','',cb.settings['noticecolor'],'bold');
-                       
-        }       
+
+        }
     }
 
 });
@@ -106,7 +112,7 @@ function init()
 
      for (i=0;i<=MAXSEP-1;i++) {
           if  (cb.settings['sepchar'] == separators[i].label) {
-                separator_char = separators[i].shortcut + ' ';     
+                separator_char = separators[i].shortcut + ' ';
           }
      }
     msg = 'Tip Menu: ';
